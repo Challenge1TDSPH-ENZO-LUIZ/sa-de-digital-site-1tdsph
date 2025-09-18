@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { TeamMember } from '../types';
 
 const Integrantes: React.FC = () => {
+  const navigate = useNavigate();
   const [members, setMembers] = useState<TeamMember[]>([]);
 
   useEffect(() => {
@@ -58,7 +60,7 @@ const Integrantes: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {members.map((member) => (
-            <div key={member.id} className="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div key={member.id} className="card text-center hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => navigate(`/integrantes/${member.id}`)}>
               <div className="mb-4">
                 <img
                   src={member.image}
@@ -75,6 +77,9 @@ const Integrantes: React.FC = () => {
               <div className="space-y-1 text-sm text-gray-600">
                 <p><span className="font-medium">RM:</span> {member.rm}</p>
                 <p><span className="font-medium">Turma:</span> {member.class}</p>
+              </div>
+              <div className="mt-4">
+                <span className="text-primary-600 text-sm font-medium">Clique para ver detalhes</span>
               </div>
             </div>
           ))}
