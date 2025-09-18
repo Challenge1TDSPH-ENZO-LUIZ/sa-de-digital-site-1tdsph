@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NavItem } from '../types';
+import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -44,6 +45,10 @@ const Header: React.FC = () => {
               </Link>
             ))}
           </nav>
+
+          <div className="flex items-center space-x-4">
+            <ThemeToggle />
+          </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
