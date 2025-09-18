@@ -8,6 +8,7 @@ import Integrantes from './pages/Integrantes';
 import DetalhesIntegrante from './pages/DetalhesIntegrante';
 import FAQ from './pages/FAQ';
 import Contato from './pages/Contato';
+import DemoHooks from './pages/DemoHooks';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/integrantes/:id" element={<DetalhesIntegrante />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contato" element={<Contato />} />
+            <Route path="/demo" element={<DemoHooks />} />
           </Routes>
         </main>
         <Footer />
